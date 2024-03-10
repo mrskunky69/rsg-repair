@@ -1,0 +1,20 @@
+add to essentials server consumables 
+
+RSGCore.Functions.CreateUseableItem("wagonrepairkit", function(source, item)
+    local _source = source
+    local Player = RSGCore.Functions.GetPlayer(_source)
+	local firstname = Player.PlayerData.charinfo.firstname
+    local lastname = Player.PlayerData.charinfo.lastname
+
+    if Player.Functions.RemoveItem(item.name, 1, item.slot) then
+
+        TriggerClientEvent("rsg-repair", source, item.name)
+	end
+	
+end)
+
+
+
+then add to rsg core shared items 
+
+['wagonrepairkit'] = {['name'] = 'wagonrepairkit', ['label'] = 'wagonrepairkit', ['weight'] = 5, ['type'] = 'item', ['image'] = 'wagonrepairkit.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'wagon repairs'},
