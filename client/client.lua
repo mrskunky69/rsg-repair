@@ -1,16 +1,16 @@
 local RSGCore = exports['rsg-core']:GetCoreObject()
 local ret = SetVehicleFixed(vehicle)
 
--- ped crouch
+--- ped crouch
 function CrouchAnim()
-    local dict = "script_rc@cldn@ig@rsc2_ig1_questionshopkeeper"
+    local dict = "mini_games@story@mud1@fix_wheel"
     RequestAnimDict(dict)
     while not HasAnimDictLoaded(dict) do
         Wait(10)
     end
     local ped = PlayerPedId()
     local coords = GetEntityCoords(ped)
-    TaskPlayAnim(ped, dict, "inspectfloor_player", 0.5, 8.0, -1, 1, 0, false, false, false)
+    TaskPlayAnim(ped, dict, "wheelfix_exit", 0.1, 4.0, -1, 1, 0, false, false, false)
 end
 
 
